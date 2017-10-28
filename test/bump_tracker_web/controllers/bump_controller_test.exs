@@ -4,7 +4,7 @@ defmodule BumpTrackerWeb.BumpControllerTest do
   alias BumpTracker.Bumps
   alias BumpTracker.Bumps.Bump
 
-  @create_attrs %{date: ~N[2010-04-17 14:00:00.000000]}
+  @create_attrs %{date: ~N[2010-04-17 14:00:00.000000], position: %{lat: 1, lng: 2}}
   @update_attrs %{date: ~N[2011-05-18 15:01:01.000000]}
   @invalid_attrs %{date: nil}
 

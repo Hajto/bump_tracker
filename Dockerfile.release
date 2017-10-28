@@ -1,7 +1,7 @@
 FROM bitwalker/alpine-erlang:19.3
 
 RUN apk update && \
-    apk --no-cache --update add libgcc libstdc++ && \
+    apk --no-cache --update add libgcc bash libstdc++ && \
     rm -rf /var/cache/apk/*
 
 EXPOSE 4000
@@ -12,4 +12,4 @@ RUN chown -R default ./releases
 
 USER default
 
-ENTRYPOINT ["/opt/app/bin/bump_tracker"]
+CMD ["/opt/app/bin/bump_tracker", "foreground"]

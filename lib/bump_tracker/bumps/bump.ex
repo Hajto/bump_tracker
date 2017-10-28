@@ -21,15 +21,15 @@ defmodule BumpTracker.Bumps.Bump do
   defmodule Position do
     use Ecto.Schema
     embedded_schema do
-      field :x, :float
-      field :y, :float
+      field :lat, :float
+      field :lng, :float
     end
 
     @doc false
     def changeset(%Position{} = bump, attrs) do
       bump
-      |> cast(attrs, [:x, :y])
-      |> validate_required([:x, :y])
+      |> cast(attrs, [:lat, :lng])
+      |> validate_required([:lat, :lng])
     end
   end
 end

@@ -12,6 +12,12 @@ defmodule BumpTrackerWeb.BumpView do
 
   def render("bump.json", %{bump: bump}) do
     %{id: bump.id,
-      date: bump.date}
+      date: bump.date,
+      position: render_one(bump.position, BumpView, "position.json")
+    }
+  end
+
+  def render("position.json", %{bump: position}) do
+    %{lat: position.lat, lng: position.lng}
   end
 end
