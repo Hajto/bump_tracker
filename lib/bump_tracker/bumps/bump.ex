@@ -11,7 +11,10 @@ defmodule BumpTracker.Bumps.Bump do
   end
 
   @doc false
-  def changeset(%Bump{} = bump, attrs) do
+  def changeset(%Bump{} = bump, %{"date" => date} = raw_attrs) do
+
+    attrs = Map.put(raw_attrs, "date", Convert.from_timestamp(date) |> DateTime.to_string() |> IO.inspect() )
+
     bump
     |> cast(attrs, [:date])
     |> cast_embed(:position)

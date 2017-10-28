@@ -12,7 +12,7 @@ defmodule BumpTrackerWeb.BumpView do
 
   def render("bump.json", %{bump: bump}) do
     %{id: bump.id,
-      date: bump.date,
+      date: Convert.to_timestamp(bump.date),
       position: render_one(bump.position, BumpView, "position.json")
     }
   end
