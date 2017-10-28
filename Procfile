@@ -1,1 +1,1 @@
-web: MIX_ENV=prod mix do local.rebar && mix phx.server
+web: MIX_ENV=prod mix do local.rebar && mix ecto.migrate && mix phx.server
