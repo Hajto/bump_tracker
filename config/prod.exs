@@ -15,7 +15,8 @@ use Mix.Config
 # which you typically run after static files are built.
 config :bump_tracker, BumpTrackerWeb.Endpoint,
   load_from_system_env: true,
-  url: [host: "${DOMAIN}", port: "${PORT}"]
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
+  url: [scheme: "https", host: "still-atoll-51543.herokuapp.com", port: 443]
 
 config :bump_tracker, BumpTracker.Repo,
   adapter: Ecto.Adapters.Postgres,
