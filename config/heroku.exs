@@ -3,7 +3,7 @@ use Mix.Config
 config :bump_tracker, BumpTrackerWeb.Endpoint,
   http: [port: {:system, "PORT"}],
   load_from_system_env: true,
-  url: [scheme: "https", host: "fierce-springs-10935.herokuapp.com", port: 443],
+  url: [scheme: "https", host: "still-atoll-51543.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
